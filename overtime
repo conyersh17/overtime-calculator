@@ -1,0 +1,60 @@
+#include <iostream>
+#include <print>
+using namespace std;
+int main()
+{
+	// (1) declare and initialize the variables
+	float hours, rate, federalTax, stateTax, gross, taxes, net;
+	bool ot = false;
+	
+	// (2) prompt user and read the employee number
+	cout << "Enter employee number";
+	int employeeNumber;
+	cin >> employeeNumber;
+		// (3) prompt user and read the number of hours worked
+		cout << "Enter the number of hours worked";
+		cin >> hours;
+		// (4) prompt user and read the employee hourly wage
+		cout << "Enter the hourly Wage:$";
+cin>>rate;
+	// (5) use a selection control structure to determine thegross pay
+	if (hours > 40) {
+		gross = 40 * rate + 1.5 * (hours - 40) * rate;
+		ot = true;
+	}
+	else {
+		gross = rate * hours;
+		ot = false;
+		
+	}
+	// (6) determine whether overtime pay is included
+		//check hours >40 then pay 1.5*rate
+	if (hours > 40)
+		ot = true;
+	// (7) determine the federal and state taxes
+	federalTax = gross * .15;
+	stateTax = gross * .03;
+	taxes = stateTax + federalTax;
+	// (8) determine the net pay
+	net = gross - taxes;
+	// (9) display the employee number
+	cout << "Employee number: " << employeeNumber << endl;
+	// (10) display the employee number of hours worked
+	cout << "Hours Worked: " << hours << endl;
+	// (11) display the hourly wage
+	cout << "Hourly Wage:$" << rate << endl;
+	// (12) display the gross pay
+	cout << "Gross Pay: $" << gross << endl;
+	// (13) display the total tax deductions
+	cout << "Total taxes" << taxes<<endl;
+	// (14) display the net pay
+	cout << "Net Pay:$" << net << endl;
+	// (15) display whether overtime pay is included
+	if (ot) {
+		cout << "Overtime Pay Included!\n";
+	}
+	else {
+		cout<<" Overtime Pay Not Included!\n";
+	}
+		return 0;
+}
